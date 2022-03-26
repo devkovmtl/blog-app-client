@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Comment from './Comment';
 import CommentForm from './CommentForm';
 
@@ -9,6 +11,12 @@ const comment = {
 };
 
 const PostDetails = () => {
+  let params = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='post__details'>
       <div className='post__details__header'>

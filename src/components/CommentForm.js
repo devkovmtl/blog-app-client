@@ -3,7 +3,7 @@ const CommentForm = () => {
     <form className='form'>
       <div className='form__group'>
         <label htmlFor='username' className='input-group__label'>
-          Username
+          <span style={{ color: '#ff0000' }}>*</span> Username
         </label>
         <input
           type='text'
@@ -18,7 +18,7 @@ const CommentForm = () => {
       </div>
       <div className='form__group'>
         <label htmlFor='content' className='input-group__label'>
-          Comment
+          <span style={{ color: '#ff0000' }}>*</span> Comment
         </label>
         <textarea
           name='content'
