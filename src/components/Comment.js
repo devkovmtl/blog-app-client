@@ -1,5 +1,5 @@
-const Comment = ({ comment: { content, author, createdAt } }) => {
-  console.log(content, author, createdAt);
+const Comment = ({ comment: { content, username, createdAtFormatted } }) => {
+  console.log(content, username, createdAtFormatted);
   return (
     <div className='comment'>
       <div className='comment__body'>
@@ -7,7 +7,7 @@ const Comment = ({ comment: { content, author, createdAt } }) => {
       </div>
       <div className='comment__footer'>
         <p>
-          Posted by <strong>{author}</strong>
+          Posted by <strong>{username}</strong>
         </p>
         <p
           style={{
@@ -16,7 +16,7 @@ const Comment = ({ comment: { content, author, createdAt } }) => {
             fontWeight: 300,
           }}
         >
-          {createdAt}
+          {createdAtFormatted}
         </p>
       </div>
     </div>
