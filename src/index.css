@@ -109,8 +109,10 @@ header h1 {
   padding: 12px;
 }
 
-.post__details__subtitle,
 .post__details__body {
+  padding: 24px 12px;
+}
+.post__details__subtitle {
   padding: 12px;
 }
 
@@ -121,7 +123,7 @@ header h1 {
 .comment {
   background: #f8f8f8;
   margin-bottom: 22px;
-  padding: 12px;
+  padding: 12px 24px;
 }
 
 .comment__footer {

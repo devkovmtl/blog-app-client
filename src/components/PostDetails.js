@@ -1,3 +1,12 @@
+import Comment from './Comment';
+
+const comment = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, debitis.',
+  author: 'Username',
+  createdAt: Date.now().toLocaleString(),
+};
+
 const PostDetails = () => {
   return (
     <div className='post__details'>
@@ -23,29 +32,10 @@ const PostDetails = () => {
         </p>
       </div>
       <div className='post__details__body'>
-        <h3 style={{ padding: '24px 0' }}>Comments:</h3>
+        <h3 style={{ padding: '12px 0 24px 0' }}>Comments:</h3>
         {/* Comment container */}
-        <div className='comment'>
-          <div className='comment__body'>
-            <p>
-              Comment Content Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. Vitae, doloribus?
-            </p>
-          </div>
-          <div className='comment__footer'>
-            <p>
-              Posted by <strong>Author</strong>
-            </p>
-            <p
-              style={{
-                fontSize: '14px',
-                fontStyle: 'italic',
-                fontWeight: 300,
-              }}
-            >
-              createdAt
-            </p>
-          </div>
+        <div className='comment__list'>
+          <Comment comment={comment} />
         </div>
       </div>
     </div>
