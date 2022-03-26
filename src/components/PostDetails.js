@@ -1,4 +1,5 @@
 import Comment from './Comment';
+import CommentForm from './CommentForm';
 
 const comment = {
   content:
@@ -37,6 +38,8 @@ const PostDetails = () => {
         <div className='comment__list'>
           <Comment comment={comment} />
         </div>
+        <h3 style={{ padding: '12px 0 14px 0' }}>Enter your comment:</h3>
+        <CommentForm />
       </div>
     </div>
   );

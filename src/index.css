@@ -134,6 +134,57 @@ header h1 {
   justify-content: space-between;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 475px;
+  margin: 0 auto;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.input-group__label {
+  margin-bottom: 10px;
+}
+
+.input-group__input,
+.input-group__textarea {
+  border: 2px solid #e8e8e8;
+  padding: 8px 12px;
+}
+
+.input-group__input--invalid,
+.input-group__textarea--invalid {
+  border-color: #ff0000;
+}
+
+.input-group--invalid-feedback {
+  color: red;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.input__submit {
+  padding: 10px 12px;
+  margin-right: auto;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: all 250ms ease-in-out;
+  font-size: 18px;
+}
+
+.input__submit:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
   header {
     height: 64px;
