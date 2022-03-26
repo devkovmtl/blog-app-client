@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Loader from './Loader';
 
 const PostListItem = () => {
   const [isLoading, setIsLoading] = useState();
@@ -17,7 +18,6 @@ const PostListItem = () => {
         const { data } = await axios.get(`http://localhost:8080`);
         setIsLoading(false);
         if (data.success) {
-          console.log(data.posts.length);
           setPosts([...data.posts]);
         } else {
           setErrors('Sorry, an error occurred. Try again.');
@@ -33,13 +33,13 @@ const PostListItem = () => {
   let content;
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <Loader />;
   } else if (errors) {
     content = <h3>{errors}</h3>;
   } else {
     content =
       posts && posts.length ? (
-        posts.map(({ _id, title, content, author, createdAt }) => (
+        posts.map(({ _id, title, content, author, createdAtFormatted }) => (
           <div className='post__list__item' key={_id}>
             <div
               className='post__item__header'
@@ -47,7 +47,8 @@ const PostListItem = () => {
             >
               <h1 className='post__item__title'>{title}</h1>
               <p className='post__item__subtitle'>
-                Posted by <strong>{author.username}</strong>, on {createdAt}
+                Posted by <strong>{author.username}</strong>, on{' '}
+                {createdAtFormatted}
               </p>
             </div>
             <div className='post__item__body'>
