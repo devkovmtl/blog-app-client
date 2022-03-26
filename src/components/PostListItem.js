@@ -39,26 +39,37 @@ const PostListItem = () => {
   } else {
     content =
       posts && posts.length ? (
-        posts.map(({ _id, title, content, author, createdAtFormatted }) => (
-          <div className='post__list__item' key={_id}>
-            <div
-              className='post__item__header'
-              onClick={() => navigate(`${_id}`)}
-            >
-              <h1 className='post__item__title'>{title}</h1>
-              <p className='post__item__subtitle'>
-                Posted by <strong>{author.username}</strong>, on{' '}
-                {createdAtFormatted}
-              </p>
+        posts.map(
+          ({
+            _id,
+            title,
+            content,
+            author,
+            createdAtFormatted,
+            commentCount,
+          }) => (
+            <div className='post__list__item' key={_id}>
+              <div
+                className='post__item__header'
+                onClick={() => navigate(`${_id}`)}
+              >
+                <h1 className='post__item__title'>{title}</h1>
+                <p className='post__item__subtitle'>
+                  Posted by <strong>{author.username}</strong>, on{' '}
+                  {createdAtFormatted}
+                </p>
+              </div>
+              <div className='post__item__body'>
+                <p>{content}</p>
+              </div>
+              <div className='post__item__footer'>
+                <p>
+                  {commentCount} {commentCount > 1 ? 'Comments' : 'Comment'}
+                </p>
+              </div>
             </div>
-            <div className='post__item__body'>
-              <p>{content}</p>
-            </div>
-            <div className='post__item__footer'>
-              <p>21 Comments</p>
-            </div>
-          </div>
-        ))
+          )
+        )
       ) : (
         <h3>No post yet.</h3>
       );
