@@ -47,7 +47,7 @@ const PostDetails = () => {
           <Comment comment={comment} />
         </div>
         <h3 style={{ padding: '12px 0 14px 0' }}>Enter your comment:</h3>
-        <CommentForm />
+        <CommentForm postId={params.postId} />
       </div>
     </div>
   );
