@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { SERVER_URL } from '../constants';
 
-const CommentForm = ({ postId }) => {
+const CommentForm = ({ postId, onCommentSubmit }) => {
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState({
@@ -68,13 +68,14 @@ const CommentForm = ({ postId }) => {
     const newComment = { username: username.trim(), content: content.trim() };
 
     try {
-      const response = await axios.post(
+      const { data } = await axios.post(
         SERVER_URL + `comments/${postId}`,
         newComment
       );
-      if (response.success) {
+      if (data.success) {
         setUsername('');
         setContent('');
+        onCommentSubmit();
       }
     } catch (error) {
       updatedErrors = {

@@ -23,6 +23,10 @@ const PostDetails = () => {
   const [errors, setErrors] = useState();
   let params = useParams();
 
+  const submitComment = () => {
+    console.log('New comment submitted');
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
@@ -81,7 +85,7 @@ const PostDetails = () => {
             )}
           </div>
           <h3 style={{ padding: '12px 0 14px 0' }}>Enter your comment:</h3>
-          <CommentForm postId={params.postId} />
+          <CommentForm postId={params.postId} onCommentSubmit={submitComment} />
         </div>
       </div>
     ) : (

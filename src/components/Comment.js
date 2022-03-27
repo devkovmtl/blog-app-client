@@ -1,5 +1,4 @@
 const Comment = ({ comment: { content, username, createdAtFormatted } }) => {
-  console.log(content, username, createdAtFormatted);
   return (
     <div className='comment'>
       <div className='comment__body'>
