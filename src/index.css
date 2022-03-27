@@ -211,6 +211,23 @@ header h1 {
   animation-iteration-count: infinite;
 }
 
+.button__scroll__top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  transition: all 250ms ease-in-out;
+  z-index: 99;
+}
+
+.button__scroll__top:hover {
+  cursor: pointer;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

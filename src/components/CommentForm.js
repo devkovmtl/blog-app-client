@@ -75,7 +75,7 @@ const CommentForm = ({ postId, onCommentSubmit }) => {
       if (data.success) {
         setUsername('');
         setContent('');
-        onCommentSubmit();
+        onCommentSubmit({ username, content });
       }
     } catch (error) {
       updatedErrors = {
