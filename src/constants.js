@@ -1,1 +1,1 @@
-exports.SERVER_URL = 'http://localhost:8080/';
+exports.SERVER_URL = 'https://shielded-reaches-57316.herokuapp.com/';

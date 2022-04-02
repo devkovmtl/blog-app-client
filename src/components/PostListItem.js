@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Loader from './Loader';
+import { SERVER_URL } from '../constants';
 
 const PostListItem = () => {
   const [isLoading, setIsLoading] = useState();
@@ -24,7 +25,7 @@ const PostListItem = () => {
     setIsLoading(true);
     const fetchPost = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:8080`);
+        const { data } = await axios.get(SERVER_URL);
         setIsLoading(false);
         if (data.success) {
           setPosts([...data.posts]);
